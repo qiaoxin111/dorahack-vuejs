@@ -1,0 +1,121 @@
+::-webkit-input-placeholder {
+  color: #cfd8e6;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #cfd8e6;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #cfd8e6;
+}
+:-ms-input-placeholder {
+  color: #cfd8e6;
+}
+.el-form {
+  /deep/ .el-form-item {
+    margin-bottom: 4.5vh !important;
+    &.password {
+      margin-bottom: 5.5vh !important;
+    }
+    .el-form-item__content {
+      line-height: 0px !important;
+      margin-left: 0px !important;
+    }
+  }
+  /deep/ .el-form-item.toHalves .el-form-item__content {
+    display: flex;
+    .DatetitleName {
+      width: 30%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .el-date-editor {
+      width: 70%;
+    }
+    .el-radio-group {
+      width: 60%;
+      display: flex;
+      margin-left: 10%;
+      .el-radio {
+        width: 50%;
+        text-align: left;
+      }
+    }
+  }
+}
+.activePreview {
+  width: 48vw;
+  .preViewcontent {
+    display: flex;
+    // height: 28px;
+    padding: 5px 0px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    .attrName,
+    .attrValue {
+      text-align: left;
+      width: 50%;
+      margin-right: 10%;
+      display: flex;
+      color: #676c73;
+      font-size: 14px;
+    }
+    .attrValue {
+      width: 40%;
+      margin-right: 0px;
+    }
+    .levelTContent {
+      display: flex;
+      width: 100%;
+      .attrName,
+      .attrValue {
+        width: 100%;
+        .levelTContentList {
+          display: flex;
+        }
+      }
+    }
+  }
+  .preViewQuesion {
+    color: #676c73;
+    font-size: 14px;
+    .attrName,
+    .attrValue {
+      text-align: left;
+      padding: 7px 0px;
+    }
+  }
+}
+// 文件上传
+.uploadBox {
+  position: relative;
+  .checkErrorWarning {
+    position: absolute;
+    bottom: -2vh;
+    font-size: 12px;
+    color: #f56c6c;
+  }
+}
+
+.twoColumns {
+  display: flex;
+  .el-form-item {
+    width: 50%;
+    &.boxLeft {
+      margin-right: 2vw;
+    }
+  }
+}
+.divideLine {
+  position: relative;
+  height: 20px;
+  width: calc(100vw - 240px);
+  left: calc(((100vw - 240px) * 0.86 / 2 - 19vw) * -1);
+  background: #f8f8f8;
+}
+.colorRed {
+  color: red !important;
+}
