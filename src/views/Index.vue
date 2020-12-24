@@ -1,34 +1,48 @@
 <template>
-  <div>
-    <div class="title">title</div>
-    <router-view></router-view>
+  <div class="main">
+    <top-nav></top-nav>
+    <div class="_body">
+      <router-view></router-view>
+    </div>
+    <bottom-footer></bottom-footer>
   </div>
+
 </template>
 
 <script>
-import common from "../common";
+import topNav from '../components/nav'
+import bottomFooter from '../components/footer'
+import common from '../common'
 export default {
-  name: "Index",
-  components: {},
+  components: {
+    topNav,
+    bottomFooter
+  },
   data() {
     return {
       showRight: "home",
     };
   },
-  watch: {},
-  methods: {},
-  created() {},
-  mounted() {},
-  computed: {},
-};
+  watch: { },
+  methods: { },
+  created() { },
+  mounted() { },
+  computed: { },
+}
 </script>
 <style lang="less">
-@import "../assets/style.less";
-@media screen and (max-width: 1280px) {
-  .index {
-    .main_body {
-      width: 1200px;
-    }
-  }
+@import '../assets/style.less';
+@media screen and (max-width: 1280px) {  }
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main ._body {
+  height: auto;
+  flex: 1;
 }
 </style>

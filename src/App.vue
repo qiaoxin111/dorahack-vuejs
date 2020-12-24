@@ -12,42 +12,10 @@ export default {
     return {}
   },
   created() {
-    // this.getComSelectList()
-    // this.getPayOutOptionsList()
-    // if (!sessionStorage.getItem('comInfo')) {
-    //   this.getComSelectList()
-    // }
   },
   mounted() {},
   methods: {
-    getPayOutOptionsList() {
-      this.$api
-        .payOutOptionsList()
-        .then(res => {
-          const code = res.code
-          if (code === '0') {
-            this.$store.commit('savePayOutOptionsList', res.data)
-          }
-        })
-        .catch(error => {
-          console.log(error)
-        })
-    },
-    getComSelectList() {
-      this.$api
-        .getComSelectList()
-        .then(res => {
-          if (res.code) {
-            sessionStorage.setItem(
-              'comInfo',
-              JSON.stringify(res.data)
-            )
-          }
-        })
-        .catch(error => {
-          console.log(error)
-        })
-    },
+
   },
 }
 </script>
@@ -76,5 +44,6 @@ li {
 html, body {
   height: 100%;
   width: 100%;
+  background-color: #F8F8F8;
 }
 </style>
