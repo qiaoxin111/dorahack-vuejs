@@ -18,6 +18,16 @@ let router = new VueRouter({
         path: 'home',
         name: 'home',
         component: () => import('../views/home.vue'),
+      },
+      {
+        path: 'balance',
+        name: 'balance',
+        component: () => import('../views/balance.vue'),
+      },
+      {
+        path: 'orders',
+        name: 'orders',
+        component: () => import('../views/orders.vue'),
       }
     ],
   },
