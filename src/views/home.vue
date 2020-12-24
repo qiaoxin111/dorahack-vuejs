@@ -1,15 +1,17 @@
 <template>
   <div>
+    <top-header></top-header>
     test
   </div>
 </template>
 
 <script>
 import common from '../common'
+import topHeader from '../components/header'
 export default {
   name: 'Index',
   components: {
-
+    topHeader
   },
   data() {
     return {

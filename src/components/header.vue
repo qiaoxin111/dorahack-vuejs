@@ -1,0 +1,50 @@
+<template>
+  <div class="f96a69">
+    <div class="header">
+
+    </div>
+  </div>
+</template>
+
+<script>
+import common from '../common'
+export default {
+  components: {
+
+  },
+  data() {
+    return {
+      menu: [
+        {
+          value: 'Market',
+          path: ''
+        },
+        {
+          value: 'Trade',
+          path: ''
+        },
+        {
+          value: 'Token Supply',
+          path: ''
+        }
+      ]
+    }
+  },
+  watch: { },
+  methods: { },
+  created() { },
+  mounted() { },
+  computed: { },
+}
+</script>
+<style lang="less">
+@import '../assets/style.less';
+@media screen and (max-width: 1440px) {
+
+}
+
+.f96a69 {
+  height: 250px;
+  background-color: #F96A69;
+}
+</style>

@@ -1,22 +1,29 @@
 <template>
-  <div>
-    test
+  <div class="main">
+    <top-nav></top-nav>
+    <div class="_body">
+      <router-view></router-view>
+    </div>
+    <bottom-footer></bottom-footer>
   </div>
+
 </template>
 
 <script>
+import topNav from '../components/nav'
+import bottomFooter from '../components/footer'
 import common from '../common'
 export default {
-  name: 'Index',
   components: {
-
+    topNav,
+    bottomFooter
   },
   data() {
     return {
       showRight: 'home',
     }
   },
-  watch:{ },
+  watch: { },
   methods: { },
   created() { },
   mounted() { },
@@ -25,13 +32,17 @@ export default {
 </script>
 <style lang="less">
 @import '../assets/style.less';
-@media screen and (max-width: 1280px) {
-  .index {
+@media screen and (max-width: 1280px) {  }
 
-    .main_body {
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-      width: 1200px;
-    }
-  }
+.main ._body {
+  height: auto;
+  flex: 1;
 }
 </style>
