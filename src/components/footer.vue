@@ -37,7 +37,7 @@ export default {
   computed: { },
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @import '../assets/style.less';
 @media screen and (max-width: 1440px) {
 
@@ -45,7 +45,7 @@ export default {
 
 .footer {
   display: flex;
-  height: 209px;
+  min-height: 209px;
   background-color: #212023;
   align-items: center;
 }
