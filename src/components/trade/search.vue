@@ -80,7 +80,7 @@ export default {
 }
 
 .order .list .title > div {
-  width: 33.336%;
+  width: 33.3%;
   float: left;
   font-size: 12px;
 
@@ -96,7 +96,7 @@ export default {
 }
 .order .list .content li > div {
   float: left;
-  width: 33.336%;
+  width: 33.3%;
 
   font-size: 12px;
   text-align: right;

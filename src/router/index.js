@@ -12,7 +12,7 @@ let router = new VueRouter({
     path: '/',
     name: 'Index',
     component: Index,
-    redirect: '/trade',
+    redirect: '/market',
     children: [
       // {
       //   path: 'home',

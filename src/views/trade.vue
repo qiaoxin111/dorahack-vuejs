@@ -32,7 +32,7 @@
       <order></order>
     </div>
 
-    <div>
+    <div class="_table">
       <cards :cardList="cardsList"></cards>
       <Table :tableColumn="tableColumn" :list="list">
         <template slot="operation" slot-scope="{ scope, cancel, toLinkPage }">
@@ -48,7 +48,7 @@ import search from '../components/trade/search'
 import order from '../components/trade/order'
 import iptInput from '../components/input/index'
 import cards from '../components/cards/index'
-import Table from "@/components/table";
+import Table from "@/components/table"
 import common from '../common'
 export default {
   name: 'Index',
@@ -261,6 +261,11 @@ export default {
   width: 800px;
   margin: 0 5px;
   background-color: #F8F8F8;
+}
+
+._table {
+  width: 1440px;
+  margin: 0 auto;
 }
 
 .order-header {

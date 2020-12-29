@@ -58,7 +58,7 @@ export default {
 
 .order-header span {
   float: left;
-  width: 33.336%;
+  width: 33.3%;
   height: 42px;
   line-height: 42px;
   border-top: 2px solid #F8F8F8;
@@ -108,7 +108,7 @@ export default {
 }
 
 .order .list .title > div {
-  width: 33.336%;
+  width: 33.3%;
   float: left;
   font-size: 12px;
 
@@ -124,7 +124,7 @@ export default {
 }
 .order .list .content li > div {
   float: left;
-  width: 33.336%;
+  width: 33.3%;
 
   font-size: 12px;
   text-align: right;
