@@ -55,6 +55,7 @@ export default {
         },
         {
           prop: "search",
+          val: '',
           type: "searchInput",
         },
       ],
@@ -129,7 +130,7 @@ export default {
         {
           pairs: "vCHF/vUSD",
           lastPrice: 22.33,
-          change: "-0.93%",
+          change: -0.93,
           high: 21.9,
           low: 22.9,
           vol: "23.75k",
@@ -137,7 +138,7 @@ export default {
         {
           pairs: "vCHF/vUSD",
           lastPrice: 22.33,
-          change: "-0.93%",
+          change: -0.93,
           high: 21.9,
           low: 22.9,
           vol: "23.75k",
@@ -145,7 +146,7 @@ export default {
         {
           pairs: "vCHF/vUSD",
           lastPrice: 22.33,
-          change: "-0.93%",
+          change: 0.93,
           high: 21.9,
           low: 22.9,
           vol: "23.75k",
@@ -153,7 +154,7 @@ export default {
         {
           pairs: "vCHF/vUSD",
           lastPrice: 22.33,
-          change: "-0.93%",
+          change: -0.93,
           high: 21.9,
           low: 22.9,
           vol: "23.75k",
@@ -161,7 +162,7 @@ export default {
         {
           pairs: "vCHF/vUSD",
           lastPrice: 22.33,
-          change: "-0.93%",
+          change: 0.93,
           high: 21.9,
           low: 22.9,
           vol: "23.75k",
@@ -169,7 +170,7 @@ export default {
         {
           pairs: "vCHF/vUSD",
           lastPrice: 22.33,
-          change: "-0.93%",
+          change: -0.93,
           high: 21.9,
           low: 22.9,
           vol: "23.75k",
@@ -177,7 +178,7 @@ export default {
         {
           pairs: "vCHF/vUSD",
           lastPrice: 22.33,
-          change: "-0.93%",
+          change: -0.93,
           high: 21.9,
           low: 22.9,
           vol: "23.75k",

@@ -37,7 +37,7 @@ export default {
   computed: { },
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @import '../assets/style.less';
 @media screen and (max-width: 1440px) {
 

@@ -49,7 +49,7 @@ export default {
   computed: { },
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @import '../assets/style.less';
 @media screen and (max-width: 1440px) {
 
@@ -96,7 +96,8 @@ export default {
 .logo {
   width: 144px;
   height: 26px;
-  background-color: #D93569;
+  background: url(../assets/images/logo.png) no-repeat;
+  background-size: contain;
 }
 
 .ff {
