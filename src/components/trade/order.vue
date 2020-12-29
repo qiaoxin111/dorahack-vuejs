@@ -1,5 +1,25 @@
 <template>
-  <div class="order"></div>
+  <div class="order">
+    <div class="order-header">
+      <span class="hov">Order Book</span>
+      <span>Market Trades</span>
+    </div>
+    <div class="order-view">
+      <div class="black">=</div>
+      <div>-</div>
+      <div>-</div>
+    </div>
+
+    <div class="list">
+      <div class="title">
+        <div>Price(xUSD)</div><div>Amount(BTC)</div><div>Total</div>
+      </div>
+      <ul class="content">
+        <li><div>7.40</div><div>578.70</div><div>2578.70</div></li>
+        <li><div>7.40</div><div>578.70</div><div>2578.70</div></li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -28,4 +48,86 @@ export default {
   width: 330px;
   height: 746px;
 }
+
+.order-header {
+  height: 44px;
+  text-align: center;
+  overflow: hidden;
+  background-color: #F8F8F8;
+}
+
+.order-header span {
+  float: left;
+  width: 33.336%;
+  height: 42px;
+  line-height: 42px;
+  border-top: 2px solid #F8F8F8;
+
+  font-size: 14px;
+  color: #49505A;
+}
+
+.order-header span.hov {
+  color: #DA235E;
+  border-top: 2px solid #DA235E;
+  background-color: #fff;
+}
+
+.order-view {
+  height: 36px;
+  display: flex;
+  padding: 0 10px;
+}
+
+.order-view div {
+  width: 22px;
+  height: 22px;
+  line-height: 24px;
+  margin: 6px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  border: 1px solid #D6DCDE;
+}
+
+.order-view div.black {
+  background: #49505A;
+  border: 1px solid #49505A;
+
+  color: #fff;
+}
+
+.order .list {
+
+}
+
+.order .list .title {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 16px;
+  color: #aeb7c4;
+}
+
+.order .list .title > div {
+  width: 33.336%;
+  float: left;
+  font-size: 12px;
+
+  text-align: right;
+}
+
+.order .list .title > div:first-of-type { text-align: left }
+.order .list .title > div:last-of-type { text-align: right }
+
+.order .list .content li {
+  padding: 4px 16px;
+  overflow: hidden;
+}
+.order .list .content li > div {
+  float: left;
+  width: 33.336%;
+
+  font-size: 12px;
+  text-align: right;
+}
+.order .list .content li > div:first-of-type { color: #F84E58; text-align: left }
 </style>

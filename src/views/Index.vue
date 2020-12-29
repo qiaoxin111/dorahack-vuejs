@@ -34,6 +34,7 @@ export default {
 @import '../assets/style.less';
 @media screen and (max-width: 1280px) {  }
 
+input{outline:none}
 .main {
   width: 100%;
   height: 100%;

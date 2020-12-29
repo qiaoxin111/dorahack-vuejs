@@ -28,7 +28,7 @@ export default {
         },
         {
           value: 'Trade',
-          path: ''
+          path: 'trade'
         },
         {
           value: 'Token Supply',
@@ -39,8 +39,8 @@ export default {
   },
   watch: { },
   methods: { 
-    go(name){
-      if(!name) return 
+    go (name) {
+      if (!name) return
       this.$router.push({name})
     }
   },
