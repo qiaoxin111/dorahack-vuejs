@@ -3,10 +3,10 @@
     <div class="nav">
       <div class="constants">
         <div class="logo"></div>
-        <ul><li v-for="(item, index) in menu" :key="index">{{item.value}}</li></ul>
+        <ul><li v-for="(item, index) in menu" :key="index"  @click='go(item.path)'>{{item.value}}</li></ul>
       </div>
       <div class="u">
-        <ul><li>Balances</li><li>Orders</li></ul>
+        <ul><li @click='go("balances")'>Balances</li><li @click='go("orders")'>Orders</li></ul>
         <div class="usr-name">USER*****114514</div>
       </div>
     </div>
@@ -24,7 +24,7 @@ export default {
       menu: [
         {
           value: 'Market',
-          path: ''
+          path: 'market'
         },
         {
           value: 'Trade',
@@ -38,7 +38,12 @@ export default {
     }
   },
   watch: { },
-  methods: { },
+  methods: { 
+    go(name){
+      if(!name) return 
+      this.$router.push({name})
+    }
+  },
   created() { },
   mounted() { },
   computed: { },

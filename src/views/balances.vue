@@ -3,18 +3,11 @@
     <div class="section1048">
       <div class="titleBanner">Balance</div>
       <div class="search">
-        <el-input class='searchInner' style="border:none;" placeholder="Search"></el-input>
+        <el-input prefix-icon="el-icon-search" class='searchInner' v-model='query'  placeholder="Search"></el-input>
       </div>
       <Table :tableColumn="tableColumn" :list="list">
         <template slot="operation" slot-scope="{ topage }">
           <span class='actionTabl' @click="topage">Trade</span>
-
-          <!-- <el-button
-        type="text"
-        size="small"
-        class="del"
-        @click="del(scope)"
-      >删除</el-button> -->
         </template>
       </Table>
     </div>
@@ -29,6 +22,7 @@ export default {
   },
   data() {
     return {
+      query: '',
       tableColumn: [
         {
           prop: "coin",
@@ -54,6 +48,9 @@ export default {
           width: "",
           sortable: true,
         },
+        {
+          title: "Action",
+        },
       ],
       list: [
         { coin: "vCHF", total: 22.33, available: 0, locked: 0 },
@@ -70,5 +67,9 @@ export default {
 
 <style lang="less" scoped>
 @import '../assets/style';
-
+.searchInner{
+  /deep/ .el-input__inner{
+    padding-left: 30px !important;
+  }
+}
 </style>

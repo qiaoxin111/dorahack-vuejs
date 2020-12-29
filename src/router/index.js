@@ -20,14 +20,19 @@ let router = new VueRouter({
         component: () => import('../views/home.vue'),
       },
       {
-        path: 'balance',
-        name: 'balance',
-        component: () => import('../views/balance.vue'),
+        path: 'balances',
+        name: 'balances',
+        component: () => import('../views/balances.vue'),
       },
       {
         path: 'orders',
         name: 'orders',
         component: () => import('../views/orders.vue'),
+      },
+      {
+        path: 'market',
+        name: 'market',
+        component: () => import('../views/market')
       }
     ],
   },

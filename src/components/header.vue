@@ -1,7 +1,7 @@
 <template>
   <div class="f96a69">
     <div class="header">
-
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -46,5 +46,8 @@ export default {
 .f96a69 {
   height: 250px;
   background-color: #F96A69;
+  .header{
+    height: 100%;
+  }
 }
 </style>

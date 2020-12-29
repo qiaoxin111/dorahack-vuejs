@@ -8,6 +8,7 @@
     >
       <el-table-column
         v-for="item in tableColumn"
+        v-if="item.title !== 'Action'"
         :key="item.prop"
         :prop="item.prop"
         :label="item.title"
@@ -15,6 +16,7 @@
         :sortable="item.sortable"
       />
       <el-table-column
+        v-if ='!!tableColumn.find(item=>item.title === "Action")'
         label="Action"
         width="180"
         align="center"
@@ -24,6 +26,7 @@
             name="operation"
             :scope="scope"
             :topage="topage"
+            :toLinkPage="toLinkPage"
             :cancel="cancel"
           />
         </template>
@@ -41,13 +44,18 @@ export default {
     };
   },
   props:['tableColumn', 'list'],
+  created(){
+  },
   methods: {
-    async  cancel({ row }) {
-      this.api = this.apis.cancel
+    cancel({ row }) {
+      // this.api = this.apis.cancel
       alert('删除成功')
     },
     topage(){
       alert('跳转到Trade页面')
+    },
+    toLinkPage(){
+      alert('跳转到every页面')
     }
   },
 };
