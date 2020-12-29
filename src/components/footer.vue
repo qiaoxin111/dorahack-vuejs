@@ -37,7 +37,7 @@ export default {
   computed: { },
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @import '../assets/style.less';
 @media screen and (max-width: 1440px) {
 
@@ -45,7 +45,7 @@ export default {
 
 .footer {
   display: flex;
-  height: 209px;
+  min-height: 209px;
   background-color: #212023;
   align-items: center;
 }
@@ -62,7 +62,9 @@ export default {
 .logo {
   width: 144px;
   height: 26px;
-  background-color: #D93569;
+  // background-color: #D93569;
   margin-right: 20px;
+  background: url(../assets/images/logo.png) no-repeat;
+  background-size: contain;
 }
 </style>

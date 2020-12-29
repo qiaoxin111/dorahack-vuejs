@@ -12,13 +12,13 @@ let router = new VueRouter({
     path: '/',
     name: 'Index',
     component: Index,
-    redirect: '/home',
+    redirect: '/trade',
     children: [
-      {
-        path: 'home',
-        name: 'home',
-        component: () => import('../views/home.vue'),
-      },
+      // {
+      //   path: 'home',
+      //   name: 'home',
+      //   component: () => import('../views/home.vue'),
+      // },
       {
         path: 'balances',
         name: 'balances',
@@ -33,6 +33,11 @@ let router = new VueRouter({
         path: 'market',
         name: 'market',
         component: () => import('../views/market')
+      },
+      {
+        path: 'trade',
+        name: 'trade',
+        component: () => import('../views/trade.vue'),
       }
     ],
   },

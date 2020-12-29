@@ -34,7 +34,7 @@
         class="searchInput"
         prefix-icon="el-icon-search"
         v-if="item.type === 'searchInput'"
-        v-model="item.prop"
+        v-model="item.val"
         placeholder="Search"
       >
       </el-input>

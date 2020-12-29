@@ -12,15 +12,22 @@
         :key="item.prop"
         :prop="item.prop"
         :label="item.title"
-        :width="item.list_width"
+        :width="item.width"
         :sortable="item.sortable"
-      />
+      >
+      <template slot-scope="scope">
+        <span  v-if='item.prop ==="change"' :class='[scope.row.change > 0 ? "colorMainGreen" : "colorMainPink"]'>{{scope.row.change}}%</span>
+        <span v-else>{{scope.row[item.prop]}}</span>
+      </template>
+      </el-table-column>
+      
       <el-table-column
         v-if ='!!tableColumn.find(item=>item.title === "Action")'
         label="Action"
-        width="180"
+        width="150"
         align="center"
       >
+      
         <template slot-scope="scope">
           <slot
             name="operation"
@@ -48,11 +55,10 @@ export default {
   },
   methods: {
     cancel({ row }) {
-      // this.api = this.apis.cancel
       alert('删除成功')
     },
     topage(){
-      alert('跳转到Trade页面')
+      this.$router.push({name:'trade'})
     },
     toLinkPage(){
       alert('跳转到every页面')
@@ -61,4 +67,12 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+@import '@/assets/style.less';
+/deep/ .el-table .cell{
+  font-size: @font12;
+}
+.changeColumn{
+
+}
+</style>

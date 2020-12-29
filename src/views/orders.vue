@@ -147,13 +147,13 @@ export default {
         {
           prop: "type",
           title: "Type",
-          width: "",
+          width: "70",
           sortable: false,
         },
         {
           prop: "side",
           title: "Side",
-          width: "",
+          width: "50",
           sortable: false,
         },
         {
@@ -206,13 +206,13 @@ export default {
         {
           prop: "type",
           title: "Type",
-          width: "",
+          width: "70",
           sortable: false,
         },
         {
           prop: "side",
           title: "Side",
-          width: "",
+          width: "50",
           sortable: false,
         },
         {
