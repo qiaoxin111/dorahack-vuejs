@@ -95,7 +95,7 @@ export default {
 
 .logo {
   width: 144px;
-  height: 26px;
+  height: 20px;
   background: url(../assets/images/logo.png) no-repeat;
   background-size: contain;
 }

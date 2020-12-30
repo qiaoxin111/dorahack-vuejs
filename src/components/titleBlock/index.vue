@@ -1,6 +1,6 @@
 <template>
   <div class='titleBox'>
-    <div class="titleBlock" v-for="(item, index) in blockData" :key="index">
+    <div class="titleBlock" v-for="(item, index) in blockData" @click="go" :key="index">
       <div class="top">
         <span class='icon'></span>
         <span class='name'>{{ item.title }}</span>
@@ -18,6 +18,13 @@ export default {
   data() {
     return {};
   },
+
+  methods: {
+    go () {
+
+      go('trade')
+    }
+  }
 };
 </script>
 

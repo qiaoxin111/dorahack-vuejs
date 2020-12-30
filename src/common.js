@@ -7,7 +7,7 @@ let obj = {
     ENVIRONMENT: ENVIRONMENT,
     /** 服务器相关 */
     API_HOST: 'http://192.168.31.205:9001/',
-    // API_HOST: 'http://10.20.131.74/service-adam',
+    // API_HOST: 'http://13.250.35.194/service-adam',
 
     // API_HOST: ENVIRONMENT == 'ONLINE' ? 'https://kuajing.camelfin.com/tradeloanweb/' :
     //     (ENVIRONMENT == 'SANDBOX' ? 'http://172.24.20.31/tradeloanweb/' : 'http://192.168.47.8:7003/tradeloanweb'), // 刘辉
