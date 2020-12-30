@@ -16,7 +16,6 @@ export default {
   },
   created() {
     const item = this.cardList.filter((item,index)=>index===this.activeName)
-    console.log('消炎则order',item[0])
     this.$emit('changeCard', item[0])
   },
   methods:{
