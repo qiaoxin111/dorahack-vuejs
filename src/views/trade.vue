@@ -33,10 +33,19 @@
     </div>
 
     <div class="_table">
-      <cards :cardList="cardsList"></cards>
+      <cards :cardList="cardsList"
+             ref="searchBox"
+             @changeCard="changeCard"></cards>
       <Table :tableColumn="tableColumn" :list="list">
         <template slot="operation" slot-scope="{ scope, cancel, toLinkPage }">
-          <span class="actionTabl" @click="cancel(scope)">Cancel</span>
+          <span
+              v-if="curCar === 'openOrders'"
+              class="actionTabl"
+              @click="cancel(scope)">Cancel</span>
+          <span
+              v-if="curCar === 'tradeHistory'"
+              class="actionTabl"
+              @click="toLinkPage">Link to Evrynet</span>
         </template>
       </Table>
     </div>
@@ -61,6 +70,7 @@ export default {
   },
   data() {
     return {
+      curCar: '',
       cardsList: [
         {
           label: "Open Orders",
@@ -75,7 +85,8 @@ export default {
           value: "tradeHistory",
         },
       ],
-      tableColumn: [
+      tableColumn: [],
+      tableColumn1: [
         {
           prop: "date",
           title: "Date",
@@ -102,19 +113,19 @@ export default {
         },
         {
           prop: "price",
-          title: "Price(vUSD)",
+          title: "Price",
           width: "",
           sortable: false,
         },
         {
           prop: "amount",
-          title: "Amount(vCHF)",
+          title: "Amount",
           width: "",
           sortable: false,
         },
         {
           prop: "total",
-          title: "Total(vUSD)",
+          title: "Total",
           width: "",
           sortable: false,
         },
@@ -131,10 +142,163 @@ export default {
           sortable: false,
         },
         {
-          title: "Cancel All",
+          title: "Action",
         },
       ],
-      list: [
+      tableColumn2: [
+        {
+          prop: "date",
+          title: "Date",
+          width: "",
+          sortable: false,
+        },
+        {
+          prop: "pair",
+          title: "Pair",
+          width: "",
+          sortable: false,
+        },
+        {
+          prop: "type",
+          title: "Type",
+          width: "70",
+          sortable: false,
+        },
+        {
+          prop: "side",
+          title: "Side",
+          width: "50",
+          sortable: false,
+        },
+        {
+          prop: "price",
+          title: "Price",
+          width: "",
+          sortable: false,
+        },
+        {
+          prop: "amount",
+          title: "Amount",
+          width: "",
+          sortable: false,
+        },
+        {
+          prop: "total",
+          title: "Total",
+          width: "",
+          sortable: false,
+        },
+        {
+          prop: "filledAmount",
+          title: "Filled Amount",
+          width: "",
+          sortable: false,
+        },
+        {
+          prop: "unfilledAmount",
+          title: "Unfilled Amount",
+          width: "",
+          sortable: false,
+        },
+        {
+          prop: "status",
+          title: "Status",
+          width: "",
+          sortable: false,
+        },
+      ],
+      list: [],
+      list1: [
+        {
+          date: "14-12-2020",
+          pair: "vCHF/vUSD",
+          type: "Limit",
+          side: 0,
+          price: '7.0900 USD',
+          amount: '678.12 CHF',
+          total: '4324.56 USD',
+          filledAmount: '320.00 USD',
+          unfilledAmount: '358.90 USD',
+        },
+        {
+          date: "14-12-2020",
+          pair: "vCHF/vUSD",
+          type: "Limit",
+          side: 0,
+          price: '7.0900 USD',
+          amount: '678.12 CHF',
+          total: '4324.56 USD',
+          filledAmount: '320.00 USD',
+          unfilledAmount: '358.90 USD',
+        },
+        {
+          date: "14-12-2020",
+          pair: "vCHF/vUSD",
+          type: "Limit",
+          side: 0,
+          price: '7.0900 USD',
+          amount: '678.12 CHF',
+          total: '4324.56 USD',
+          filledAmount: '320.00 USD',
+          unfilledAmount: '358.90 USD',
+        },
+        {
+          date: "14-12-2020",
+          pair: "vCHF/vUSD",
+          type: "Limit",
+          side: 0,
+          price: '7.0900 USD',
+          amount: '678.12 CHF',
+          total: '4324.56 USD',
+          filledAmount: '320.00 USD',
+          unfilledAmount: '358.90 USD',
+        },
+        {
+          date: "14-12-2020",
+          pair: "vCHF/vUSD",
+          type: "Limit",
+          side: 0,
+          price: '7.0900 USD',
+          amount: '678.12 CHF',
+          total: '4324.56 USD',
+          filledAmount: '320.00 USD',
+          unfilledAmount: '358.90 USD',
+        },
+        {
+          date: "14-12-2020",
+          pair: "vCHF/vUSD",
+          type: "Limit",
+          side: 0,
+          price: '7.0900 USD',
+          amount: '678.12 CHF',
+          total: '4324.56 USD',
+          filledAmount: '320.00 USD',
+          unfilledAmount: '358.90 USD',
+        },
+        {
+          date: "14-12-2020",
+          pair: "vCHF/vUSD",
+          type: "Limit",
+          side: 0,
+          price: '7.0900 USD',
+          amount: '678.12 CHF',
+          total: '4324.56 USD',
+          filledAmount: '320.00 USD',
+          unfilledAmount: '358.90 USD',
+        },
+        {
+          date: "14-12-2020",
+          pair: "vCHF/vUSD",
+          type: "Limit",
+          side: 0,
+          price: '7.0900 USD',
+          amount: '678.12 CHF',
+          total: '4324.56 USD',
+          filledAmount: '320.00 USD',
+          unfilledAmount: '358.90 USD',
+        },
+      ],
+      list2: [
         {
           date: "14-12-2020",
           pair: "vCHF/vUSD",
@@ -235,7 +399,19 @@ export default {
     }
   },
   watch: { },
-  methods: { },
+  methods: {
+
+    changeCard(data, item) {
+      this.curCar = data.value;
+      if (this.curCar === "ordersHistory") {
+        this.tableColumn = this.tableColumn2;
+        this.list = this.list2;
+      } else {
+        this.tableColumn = this.tableColumn1;
+        this.list = this.list1;
+      }
+    },
+  },
   created() { },
   mounted() { },
   computed: { },
@@ -335,5 +511,10 @@ export default {
   font-size: 14px;
   color: #fff;
   text-align: center;
+}
+
+.actionTabl{
+  color: @color357CE1;
+  cursor: pointer;
 }
 </style>

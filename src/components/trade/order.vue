@@ -12,7 +12,7 @@
 
     <div class="list">
       <div class="title">
-        <div>Price(xUSD)</div><div>Amount(BTC)</div><div>Total</div>
+        <div>Price</div><div>Amount</div><div>Total</div>
       </div>
       <ul class="content">
         <li><div>7.40</div><div>578.70</div><div>2578.70</div></li>

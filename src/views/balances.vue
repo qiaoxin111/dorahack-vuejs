@@ -54,11 +54,8 @@ export default {
       ],
       list: [
         { coin: "vCHF", total: 22.33, available: '0.00', locked: '0.00' },
-        { coin: "EVRY", total: 22.33, available: 22.9, locked: 22.9 },
-        { coin: "USD", total: 22.33, available: 22.9, locked: 22.9 },
-        { coin: "EVRY", total: 22.33, available: '0.00', locked: '0.00' },
-        { coin: "USD", total: 22.33, available: 22.9, locked: 22.9 },
-        { coin: "EVRY", total: 22.33, available: '0.00', locked: '0.00' },
+        { coin: "EVRY", total: 22.33, available: 22.90, locked: 22.90 },
+        { coin: "USDT", total: 22.33, available: 22.90, locked: 22.90 },
       ],
     };
   },
