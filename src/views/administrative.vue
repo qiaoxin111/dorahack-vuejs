@@ -343,10 +343,11 @@ export default {
           line-height: 38px;
           font-size: @font12;
           color: @colorAEB7C4;
+          
         }
         .pricUnit {
           line-height: 30px;
-          color: @colorEEE6DE;
+          color: @color49505A;
           .price {
             font-size: @font16;
             color: #000;
