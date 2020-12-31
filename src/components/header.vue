@@ -24,7 +24,7 @@ export default {
           path: ''
         },
         {
-          value: 'Token Supply',
+          value: 'Administrative Analytics',
           path: ''
         }
       ]

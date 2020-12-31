@@ -38,6 +38,11 @@ let router = new VueRouter({
         path: 'trade',
         name: 'trade',
         component: () => import('../views/trade.vue'),
+      },
+      {
+        path: 'administrative',
+        name: 'administrative',
+        component: () => import('../views/administrative.vue'),
       }
     ],
   },

@@ -31,8 +31,8 @@ export default {
           path: 'trade'
         },
         {
-          value: 'Token Supply',
-          path: ''
+          value: 'Administrative Analytics',
+          path: 'administrative'
         }
       ]
     }
