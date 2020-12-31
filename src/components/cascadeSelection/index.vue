@@ -1,18 +1,15 @@
 <template>
   <div class="cascSelect">
-    <div class="selectC" v-for="(item, index) in list" :key="index">
-      <span class="divider" v-if="index !== 0"> / </span>
+    <div class="selectC">
       <el-select
-        v-model="item.val"
-        :placeholder="item.prop"
-        @change="changeSelect($event, item, index)"
-      >
+        v-model="optionsLevelValue">
+
         <el-option
-          v-for="i in item.options"
+          v-for="i in optionsLevelList"
           :key="i.value"
           :label="i.label"
-          :value="i.value"
-        >
+          :value="i.value">
+
         </el-option>
       </el-select>
     </div>
@@ -24,28 +21,23 @@ export default {
   props: ["list"],
   data() {
     return {
-      optionsLevelOne: [
+      optionsLevelValue: '',
+      optionsLevelList: [
         {
-          label: "vCHF",
-          value: "vCHF",
+          label: "vCHF/vUSD",
+          value: "vCHF/vUSD",
         },
-      ],
-      optionsLevelTwo: [
-        {
-          label: "vUSD",
-          value: "vUSD",
-        },
-      ],
+      ]
     };
   },
   created() {
-    this.list[0].options = this.optionsLevelOne;
-    this.list[0].val = this.optionsLevelOne[0].value;
-    this.list[1].options = this.optionsLevelTwo;
-    this.list[1].val = this.optionsLevelTwo[0].value;
-    this.list.forEach((element) => {
-      this.$emit("changeCas", element);
-    });
+    // this.list[0].options = this.optionsLevelOne;
+    // this.list[0].val = this.optionsLevelOne[0].value;
+    // this.list[1].options = this.optionsLevelTwo;
+    // this.list[1].val = this.optionsLevelTwo[0].value;
+    // this.list.forEach((element) => {
+    //   this.$emit("changeCas", element);
+    // });
   },
   methods: {
     changeSelect(value, item, index) {

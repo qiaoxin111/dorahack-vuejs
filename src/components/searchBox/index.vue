@@ -6,11 +6,13 @@
       :key="index"
       :class="{ blockSpace: item.type === 'block' }"
     >
+
       <CascadeSelection
         v-if="item.type === 'cascadeSelection'"
         @changeCas="changeCas($event, item)"
         :list="item.list"
       ></CascadeSelection>
+
       <Cards
         v-if="item.type === 'cards'"
         @changeCard="changeCard($event, item)"
@@ -60,6 +62,7 @@ export default {
   data() {
     return {
       query: {},
+      vD: ''
     };
   },
   created() {

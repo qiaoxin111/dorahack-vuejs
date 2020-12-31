@@ -8,7 +8,7 @@
     >
       <el-table-column
         v-for="item in tableColumn"
-        v-if="item.title !== 'Action'"
+        v-if="item.title !== 'Action' && item.title !== 'Cancel All'"
         :key="item.prop"
         :prop="item.prop"
         :label="item.title"
@@ -28,6 +28,24 @@
         align="center"
       >
       
+        <template slot-scope="scope">
+          <slot
+            name="operation"
+            :scope="scope"
+            :topage="topage"
+            :toLinkPage="toLinkPage"
+            :cancel="cancel"
+          />
+        </template>
+      </el-table-column>
+
+      <el-table-column
+        v-if ='!!tableColumn.find(item=>item.title === "Cancel All")'
+        label="Cancel All"
+        width="150"
+        align="center"
+      >
+
         <template slot-scope="scope">
           <slot
             name="operation"

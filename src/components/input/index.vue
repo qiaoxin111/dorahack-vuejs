@@ -1,7 +1,7 @@
 <template>
   <div class="ipt-price">
     <span class="headerContent">{{ headerContent }}</span>
-    <input class="" type="text" :placeholder="placeholderText">
+    <input class="" type="text" :placeholder="placeholderText" :readonly="readonly">
     <span class="lastContent">{{ footerContent }}</span>
   </div>
 </template>
@@ -24,6 +24,9 @@ export default {
     },
     placeholderText: {
       default: ''
+    },
+    readonly: {
+      default: false
     }
   },
   watch: { },

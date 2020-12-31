@@ -123,7 +123,7 @@ export default {
           sortable: true,
         },
         {
-          title: "Action",
+          title: "Cancel All",
         },
       ],
       list: [

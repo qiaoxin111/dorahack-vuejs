@@ -1,22 +1,46 @@
 <template>
   <div class="order">
     <div class="order-header">
-      <span class="hov">Order Book</span>
-      <span>Market Trades</span>
-    </div>
-    <div class="order-view">
-      <div class="black">=</div>
-      <div>-</div>
-      <div>-</div>
+      <span v-for="(item, index) in headerMap" :key="index"
+            :class="item.cls"
+            @click="viewChange(index)">
+        {{ item.title }}</span>
     </div>
 
-    <div class="list">
+    <div class="order-view" v-if="headerMap[0].cls == 'hov'">
+      <img src="../../assets/images/buysell-cur.png" alt="">
+      <img src="../../assets/images/buy-un.png" alt="">
+      <img src="../../assets/images/sell-un.png" alt="">
+    </div>
+
+    <div class="list" v-if="headerMap[0].cls == 'hov'">
       <div class="title">
         <div>Price</div><div>Amount</div><div>Total</div>
       </div>
       <ul class="content">
-        <li><div>7.40</div><div>578.70</div><div>2578.70</div></li>
-        <li><div>7.40</div><div>578.70</div><div>2578.70</div></li>
+        <li><div class="c">7.40</div><div>578.70</div><div>2578.70</div></li>
+        <li><div class="c">7.40</div><div>578.70</div><div>2578.70</div></li>
+      </ul>
+
+      <ul class="content gr">
+        <li><div class="d">7.40</div><div>578.70</div><div>2578.70</div></li>
+        <li><div class="d">7.40</div><div>578.70</div><div>2578.70</div></li>
+      </ul>
+    </div>
+
+    <div class="list" v-if="headerMap[1].cls == 'hov'">
+      <div class="title">
+        <div>Price</div><div>Amount</div><div>Time</div>
+      </div>
+
+      <ul class="content">
+        <li><div class="c">7.40</div><div>578.70</div><div>14-12-2020 21:00:00</div></li>
+        <li><div class="d">7.40</div><div>578.70</div><div>14-12-2020 21:00:00</div></li>
+        <li><div class="d">7.40</div><div>578.70</div><div>14-12-2020 21:00:00</div></li>
+        <li><div class="d">7.40</div><div>578.70</div><div>14-12-2020 21:00:00</div></li>
+        <li><div class="c">7.40</div><div>578.70</div><div>14-12-2020 21:00:00</div></li>
+        <li><div class="d">7.40</div><div>578.70</div><div>14-12-2020 21:00:00</div></li>
+
       </ul>
     </div>
   </div>
@@ -29,10 +53,33 @@ export default {
 
   },
   data() {
-    return { }
+    return {
+      headerMap: [
+        {
+          title: 'Order Book',
+          cls: 'hov'
+        }, {
+          title: 'Market Trades',
+          cls: ''
+        }
+      ]
+    }
   },
   watch: { },
-  methods: { },
+  methods: {
+    viewChange (idx) {
+      this.headerMap.map((item, index) => {
+        item.cls = ''
+
+        if (index == idx) {
+          item.cls = 'hov'
+        }
+      })
+      // for (let i in this.headerMap) {
+      //
+      // }
+    }
+  },
   created() { },
   mounted() { },
   computed: { },
@@ -79,14 +126,15 @@ export default {
   padding: 0 10px;
 }
 
-.order-view div {
+.order-view > img {
+  display: block;
   width: 22px;
   height: 22px;
   line-height: 24px;
   margin: 6px;
   background: #FFFFFF;
   border-radius: 3px;
-  border: 1px solid #D6DCDE;
+  border: 1px solid rgba(214, 220, 222, .2);
 }
 
 .order-view div.black {
@@ -129,5 +177,11 @@ export default {
   font-size: 12px;
   text-align: right;
 }
-.order .list .content li > div:first-of-type { color: #F84E58; text-align: left }
+.order .list .content.gr { margin-top: 30px }
+.order .list .content li > div:first-of-type { text-align: left }
+
+.order .list .content .c { color: #F84E58; }
+.order .list .content .d { color: #2DB86C; }
+
+
 </style>

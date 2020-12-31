@@ -6,11 +6,11 @@
         <div class="canvas"></div>
         <div>
           <div class="order-header">
-            <span class="hov">Limit</span>
-            <span>Market</span>
+            <span v-for="(item, index) in hdList"
+                  :class="item.cls" @click="hdControl(index)">{{ item.title }}</span>
           </div>
 
-          <div class="calculate">
+          <div class="calculate" v-if="hdList[0].cls == 'hov'">
             <div>
               <p class="ttl">Available 12.3456746 xUSD <span>Buy xCHF</span></p>
               <ipt-input header-content="Buy Price" footer-content="xUSD" placeholder-text="Max:50.20"></ipt-input>
@@ -27,6 +27,24 @@
               <button class="btn">Create Sell Order</button>
             </div>
           </div>
+
+          <div class="calculate" v-if="hdList[1].cls == 'hov'">
+            <div>
+              <p class="ttl">Available 12.3456746 xUSD <span>Buy xCHF</span></p>
+              <ipt-input header-content="Buy Price" footer-content="xUSD" readonly="true" placeholder-text="Max:50.20"></ipt-input>
+              <ipt-input header-content="Amount" footer-content="xCHF"></ipt-input>
+              <p class="ttl">Total <span class="font14">0.00xUSD</span></p>
+              <button class="btn">Create Buy Order</button>
+            </div>
+
+            <div>
+              <p class="ttl">Available 12.3456746 xUSD <span>Sell xCHF</span></p>
+              <ipt-input header-content="Buy Price" footer-content="xUSD" readonly="true" placeholder-text="Max:50.20"></ipt-input>
+              <ipt-input header-content="Amount" footer-content="xCHF"></ipt-input>
+              <p class="ttl">Total <span class="font14">0.00xUSD</span></p>
+              <button class="btn">Create Sell Order</button>
+            </div>
+          </div>
         </div>
       </div>
       <order></order>
@@ -38,14 +56,12 @@
              @changeCard="changeCard"></cards>
       <Table :tableColumn="tableColumn" :list="list">
         <template slot="operation" slot-scope="{ scope, cancel, toLinkPage }">
-          <span
-              v-if="curCar === 'openOrders'"
-              class="actionTabl"
-              @click="cancel(scope)">Cancel</span>
-          <span
-              v-if="curCar === 'tradeHistory'"
-              class="actionTabl"
-              @click="toLinkPage">Link to Evrynet</span>
+          <span v-if="curCar === 'openOrders'"
+                class="actionTabl"
+                @click="cancel(scope)">Cancel</span>
+          <span v-if="curCar === 'tradeHistory'"
+                class="actionTabl"
+                @click="toLinkPage">Link to Evrynet</span>
         </template>
       </Table>
     </div>
@@ -142,7 +158,8 @@ export default {
           sortable: false,
         },
         {
-          title: "Action",
+          title: "Cancel All",
+          prop: "status",
         },
       ],
       tableColumn2: [
@@ -208,9 +225,9 @@ export default {
         },
       ],
       list: [],
-      list1: [
+      list2: [
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -221,7 +238,7 @@ export default {
           unfilledAmount: '358.90 USD',
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -232,7 +249,7 @@ export default {
           unfilledAmount: '358.90 USD',
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -243,7 +260,7 @@ export default {
           unfilledAmount: '358.90 USD',
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -254,7 +271,7 @@ export default {
           unfilledAmount: '358.90 USD',
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -265,7 +282,7 @@ export default {
           unfilledAmount: '358.90 USD',
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -276,7 +293,7 @@ export default {
           unfilledAmount: '358.90 USD',
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -287,7 +304,7 @@ export default {
           unfilledAmount: '358.90 USD',
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -298,9 +315,9 @@ export default {
           unfilledAmount: '358.90 USD',
         },
       ],
-      list2: [
+      list1: [
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -312,7 +329,7 @@ export default {
           status: "Cancel",
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -324,7 +341,7 @@ export default {
           status: "Complete",
         },
         {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -336,55 +353,7 @@ export default {
           status: "Cancel",
         },
         {
-          date: "14-12-2020",
-          pair: "vCHF/vUSD",
-          type: "Limit",
-          side: 0,
-          price: 7.09,
-          amount: 678.12349,
-          total: 4324.56,
-          filledAmount: 320,
-          unfilledAmount: 358.909,
-          status: "Cancel",
-        },
-        {
-          date: "14-12-2020",
-          pair: "vCHF/vUSD",
-          type: "Limit",
-          side: 0,
-          price: 7.09,
-          amount: 678.12349,
-          total: 4324.56,
-          filledAmount: 320,
-          unfilledAmount: 358.909,
-          status: "Failed",
-        },
-        {
-          date: "14-12-2020",
-          pair: "vCHF/vUSD",
-          type: "Limit",
-          side: 0,
-          price: 7.09,
-          amount: 678.12349,
-          total: 4324.56,
-          filledAmount: 320,
-          unfilledAmount: 358.909,
-          status: "Failed",
-        },
-        {
-          date: "14-12-2020",
-          pair: "vCHF/vUSD",
-          type: "Limit",
-          side: 0,
-          price: 7.09,
-          amount: 678.12349,
-          total: 4324.56,
-          filledAmount: 320,
-          unfilledAmount: 358.909,
-          status: "Failed",
-        },
-        {
-          date: "14-12-2020",
+          date: "14-12-2020 11:11:11",
           pair: "vCHF/vUSD",
           type: "Limit",
           side: 0,
@@ -396,6 +365,17 @@ export default {
           status: "Failed",
         },
       ],
+
+      hdList: [
+        {
+          title: 'Limit',
+          cls: 'hov'
+        },
+        {
+          title: 'Market',
+          cls: ''
+        }
+      ]
     }
   },
   watch: { },
@@ -411,6 +391,17 @@ export default {
         this.list = this.list1;
       }
     },
+
+    hdControl (idx) {
+      this.hdList.map((item, index) => {
+
+        item.cls = ''
+
+        if (index == idx) {
+          item.cls = 'hov'
+        }
+      })
+    }
   },
   created() { },
   mounted() { },
