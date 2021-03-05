@@ -1,8 +1,6 @@
 <template>
   <div class="f96a69">
-    <div class="header">
       <slot></slot>
-    </div>
   </div>
 </template>
 
@@ -14,20 +12,7 @@ export default {
   },
   data() {
     return {
-      menu: [
-        {
-          value: 'Market',
-          path: ''
-        },
-        {
-          value: 'Trade',
-          path: ''
-        },
-        {
-          value: 'Administrative Analytics',
-          path: ''
-        }
-      ]
+
     }
   },
   watch: { },

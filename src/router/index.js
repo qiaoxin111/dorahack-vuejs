@@ -14,36 +14,16 @@ let router = new VueRouter({
     component: Index,
     redirect: '/market',
     children: [
-      // {
-      //   path: 'home',
-      //   name: 'home',
-      //   component: () => import('../views/home.vue'),
-      // },
-      {
-        path: 'balances',
-        name: 'balances',
-        component: () => import('../views/balances.vue'),
-      },
-      {
-        path: 'orders',
-        name: 'orders',
-        component: () => import('../views/orders.vue'),
-      },
       {
         path: 'market',
         name: 'market',
         component: () => import('../views/market')
       },
       {
-        path: 'trade',
-        name: 'trade',
-        component: () => import('../views/trade.vue'),
+        path: 'detail',
+        name: 'detail',
+        component: () => import('../views/detail')
       },
-      {
-        path: 'administrative',
-        name: 'administrative',
-        component: () => import('../views/administrative.vue'),
-      }
     ],
   },
   {

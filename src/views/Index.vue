@@ -4,7 +4,6 @@
     <div class="_body">
       <router-view></router-view>
     </div>
-    <bottom-footer></bottom-footer>
   </div>
 
 </template>
@@ -43,6 +42,7 @@ input{outline:none}
 }
 
 .main ._body {
+  background: #FBFDFF;
   height: auto;
   flex: 1;
 }
